@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0 0 0 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 50px 50px 50px;
+}
+
+.header a {
+    font-family: Naga;
+    font-size: xxx-large;
+    color: #3e8e41;
+    text-decoration: none;
+    margin: 70px 0 70px 0;
+}
+
+.header a h1{
+    margin: 0 0 0 0;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.error {
+    font-size: small;
+    color: red;
+    display: none;
+}
+
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+input[type="text"]:invalid,
+input[type="number"]:invalid,
+input[type="file"]:invalid {
+    border: 2px solid #CC0000;
+}
+
+.linkBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.linkBlock label {
+    margin-bottom: 0px;
+}
+
+.linkBlock input {
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+textarea#description {
+    font-family: Arial, sans-serif;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    height: 200px;
+    resize: none;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+button {
+    display: block;
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+.price-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.price-options label {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.price-options input[type="radio"] {
+    display: none;
+}
+
+.price-options .radio-label {
+    display: inline-block;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.price-options .radio-label-name {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+
+
+.price-options input[type="radio"]:checked + .radio-label {
+    background-color: #1abc9c;
+    color: white;
+}

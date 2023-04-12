@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/styles/form_style.css">
+</head>
+<body>
+<div class = "header">
+    <a href="/main">
+        <h1>Рестораны Минска</h1>
+    </a>
+</div>
+<form id="form">
+    <label for="error" class="error" id="nameError"></label>
+    <label for="error" class="error" id="linkError"></label>
+    <label for="name">Имя ресторана:</label>
+    <input type="text" name="name" id="name" required value="<%=name%>">
+
+    <label for="address">Адрес:</label>
+    <input type="text" name="address" id="address" required value="<%=address%>">
+
+    <label for="capacity">Вместительность:</label>
+    <input type="number" name="capacity" id="capacity" required min="1" value="<%=capacity%>">
+
+    <div class="price-options">
+        <label for="radio-label-name">
+            <span class="radio-label-name" id="radio-label-name">Ценовая категория: </span>
+        </label>
+
+        <label for="$">
+            <input type="radio" id="$" name="price" value="$" required <%if(price=="$") {%> checked <%}%>>
+            <span class="radio-label">$</span>
+        </label>
+        <label for="$$">
+            <input type="radio" id="$$" name="price" value="$$" required <%if(price=="$$") {%> checked <%}%>>
+            <span class="radio-label">$$</span>
+        </label>
+        <label for="$$$">
+            <input type="radio" id="$$$" name="price" value="$$$" required <%if(price=="$$$") {%> checked <%}%>>
+            <span class="radio-label">$$$</span>
+        </label>
+        <label for="$$$$">
+            <input type="radio" id="$$$$" name="price" value="$$$$" required <%if(price=="$$$$") {%> checked <%}%>>
+            <span class="radio-label">$$$$</span>
+        </label>
+    </div>
+
+    <label for="description">Описание:</label>
+    <textarea name="description" id="description" form="form"><%=description%></textarea>
+
+
+    <label for="link">Ссылка:</label>
+    <div class="linkBlock">
+        <label><%=host+'/'%></label>
+        <input type="text" name="link" id="link" value="<%=link%>" required>
+    </div>
+
+
+    <label for="image">Изменить картинку:</label>
+    <input type="file" name="image" id="image" accept=".gif,.jpg,.jpeg,.png,.bmp">
+    <button type="button" onclick="performClick('<%=host%>','<%='/change-rest?id=' + id%>','PUT','change')">Изменить</button>
+</form>
+
+<script src="/scripts/form_script.js"></script>
+</body>
+<html>

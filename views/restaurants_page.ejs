@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/styles/main_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <div class = "header">
+                <a href="/main">
+                    <h1>Рестораны Минска</h1>
+                </a>
+            </div>
+            <div class="rests">
+                <%for(restaurant of restaurants) {%>
+                    <a href="<%='/'+restaurant.r_link%>" class="rest">
+                        <div class="image">
+                            <img src="<%='/images/'+images[restaurant.r_id]%>">
+                        </div>
+                        <div class = "name-n-price">
+                            <div class="name">
+                                <h3><%=restaurant.r_name%></h3>
+                            </div>
+                            <div class="price">
+                                <h3><%=restaurant.r_price%></h3>
+                            </div>
+                        </div>
+                        <p><%=restaurant.r_address%></p>
+                    </a>
+                <%}%>
+                <a href="/add-rest" class="rest rest-add">
+                    <img src="/images/plus.png">
+                </a>
+            </div>
+        </div>
+        <div class="absolute-panel">
+            <div class="filter-toggle-div">
+                <button class="filter-toggle">
+                    <img src="/images/filter.png">
+                    Фильтр
+                </button>
+            </div>
+        </div>
+        <div class="filter-sidebar">
+            <form>
+                <div class="form-group">
+                    <label for="name">Название:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="p-name">Цена:</label>
+                    <div class="checkboxes">
+                        <div>
+                            <input type="radio" id="price1" name="price" value="$">
+                            <label for="price1">$</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="price2" name="price" value="$$">
+                            <label for="price2">$$</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="price3" name="price" value="$$$">
+                            <label for="price3">$$$</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="price4" name="price" value="$$$$">
+                            <label for="price4">$$$$</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="capacityFrom">Мин. вместительность:</label>
+                    <input type="number" id="capacityFrom" nme="capacityFrom" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="capacityTo">Макс. вместительность:</label>
+                    <input type="number" id="capacityTo" name="capacityTo" min="1">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Применить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/scripts/filter.js"></script>
+</body>
+</html>

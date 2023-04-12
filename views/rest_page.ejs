@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/styles/rest_style.css">
+</head>
+<body>
+<%
+function getGuestCountWord(capacity) {
+        if(capacity%100<10 || capacity%100>20) {
+            if(capacity%10>=2 && capacity%10<=4) return capacity+' гостя'
+            else if(capacity%10==1) return capacity+' гость'
+        }
+        return capacity+' гостей'
+    }
+
+%>
+<div class = "header">
+    <a href="/main">
+        <h1>Рестораны Минска</h1>
+    </a>
+</div>
+<div class="main">
+    <div class="name-n-image">
+        <div class="name">
+            <h1 class="name-object appear-from-left" id="alright"><%=name%></h1>
+            <h2 class="name-object appear-from-left">Ценовая категория: <%=price%></h2>
+            <h2 class="name-object appear-from-left">Вместительность: <%=getGuestCountWord(capacity)%></h2>
+            <h2 class="name-object appear-from-left">Адрес: <%=address%></h2>
+        </div>
+        <div class="image appear-from-right">
+            <img src="<%='/images/'+images[0].i_filepath%>">
+        </div>
+    </div>
+    <div class="description">
+        <h2 class="name-object">Описание</h2>
+        <span class="text"><%=description%></span>
+    </div>
+    <div class="absolute-panel">
+        <div class="change-toggle-div">
+            <a class="change-toggle" id="change-toggle" onclick="changeRestaurant('<%=host%>',<%=id%>)">
+                <img src="/images/mech.png">
+                <p>Изменить</p>
+            </a>
+        </div>
+        <div class="delete-toggle-div">
+            <a class="delete-toggle" id="delete-toggle" onclick="deleteRestaurant('<%=host%>',<%=id%>)">
+                <img src="/images/trash.png">
+                <p>Удалить</p>
+            </a>
+        </div>
+    </div>
+</div>
+<script src="/scripts/rest_page_script.js"></script>
+</body>
+</html>
